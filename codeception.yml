@@ -5,9 +5,8 @@ suites:
         path: .
         modules:
             enabled:
-                - WebDriver:
+                - PhpBrowser:
                     url: https://www.nicovideo.jp/
-                    browser: firefox
                 - \Helper\Acceptance
                 
         # add Codeception\Step\Retry trait to AcceptanceTester to enable retries
