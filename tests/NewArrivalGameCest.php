@@ -56,5 +56,31 @@ class NewArrivalGameCest
 		// ジャンル一覧の中から「ゲーム」をクリックして移動するはず
 		$I->click('ゲーム');
 		$I->makeHtmlSnapshot();
+
+		// 各ジャンルのページに行くと、ジャンルの表示がある
+		$I->see('ジャンル');
+
+		// ジャンルのタグ一覧がある
+		$I->seeElement(['css' => '.RepresentedTag']);
+
+		// このセクションは各ジャンルにしか無いようだ（「全て」にはない）
+		$I->see('新着コメント動画');
+		$I->seeElement(['css' => '.NewCommentVideosContainer .VideoCard']);
+
+		$I->see('注目のタグ');
+		$I->seeElement(['css' => '.TrendyTagAreaContainer .TagItem']);
+
+		$I->see('新着投稿動画');
+		$I->seeElement(['css' => '.NewArrivalVideosContainer .VideoCard']);
+
+		$I->see('ランキング');
+		$I->seeElement(['css' => '.RankingVideosContainer .VideoCard']);
+
+		// 「注目のタグの動画」には、タグ、タグの説明、動画いくつか、が出ている
+		$I->see('注目のタグの動画');
+		$I->seeElement(['css' => '.TrendyTagsWithVideosContainer .TagItem']);
+		$I->seeElement(['css' => '.TrendyTagsWithVideosContainer .TrendyTagsWithVideosContainer-description']);
+		$I->seeElement(['css' => '.TrendyTagsWithVideosContainer .TrendyTagsWithVideosContainer-videos .VideoCard']);
+
 	}
 }
