@@ -1,0 +1,9 @@
+# こいつを codeception.yml にコピーしたうえで、
+# email と password を修正して使う
+suites:
+  acceptance:
+    modules:
+      enabled:
+        - \Helper\User:
+            email: aaa
+            password: xxx
